@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url:string = 'https://dummyjson.com/users'
+const url: string = 'https://dummyjson.com/users';
 
 interface IMainObject {
     users: IUser[];
@@ -17,63 +17,54 @@ interface IUser {
     age: number,
     gender: 'male' | 'female',
     email: string,
-    phone: string, //но лучше наверно использовать какую то библиотеку/функцию или регулярку
+    phone: string,
     username: string,
     password: string,
     birthDate: string,
     image: string,
-    bloodGroup: 'A-' | 'A+' | 'B+' | 'B-' | 'O+' | 'O−' | 'AB+' | 'AB-',
+    bloodGroup: string,
     height: number,
     weight: number,
-    eyeColor: 'Green' | 'Gray' | 'Brown' | 'Amber' | 'Blue',
-    hair: hairType,
+    eyeColor: string,
+    hair: HairType,
     domain: string,
-    ip: string, //так же как и с номером
-    address: addressType,
+    ip: number,
+    address: AddressType,
     macAddress: string,
     university: string,
-    bank: bankType,
-    company: companyType,
+    bank: BankType,
+    company: CompanyType,
     ein: string,
     ssn: string,
     userAgent: string
 }
 
-type hairType = {
+type HairType = {
     color: 'Auburn' | 'Blond' | 'Black' | 'Brown',
     type: 'Curly' | 'Strands' | 'Very curly' | 'Wavy' | 'Straight'
 }
 
-type addressType = {
+type AddressType = {
     address: string,
     city: string,
     coordinates: {
         lat: number,
         lng: number
     },
-    postalCode: string, // странно почему все данные приходят строкой
+    postalCode: string,
     state: string
 }
 
-type bankType = {
+type BankType = {
     cardExpire: string,
     cardNumber: string,
-    cardType: 'bankcard' | 'maestro' | 'mastercard' | 'jcb' | 'visa-electron' | 'americanexpress' | 'diners-club-carte-blanche' | 'instapayment' | 'switch' | 'solo',
-    currency: 'Peso' | 'Ruble' | 'Yuan Renminbi' | 'Euro' | 'Rupiah' | 'Ringgit' | 'Rial' | 'Dollar' | 'Rupee' | 'Koruna' | 'Real' | 'Yen' | 'Hryvnia',
+    cardType: string,
+    currency: string,
     iban: string
 }
 
-type companyType = {
-    address: {
-        address: string,
-        city: string,
-        coordinates: {
-            lat:number,
-            lng:number
-        },
-        postalCode: string,
-        state: string
-    },
+type CompanyType = {
+    address: AddressType,
     department: string,
     name: string,
     title: string
