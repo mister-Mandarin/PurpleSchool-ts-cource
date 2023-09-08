@@ -106,8 +106,7 @@ class logger {
     }
 }
 class user11 {
-    pay(paymId) {
-    }
+    pay(paymId) { }
 }
 class Paymentt {
     constructor(id) {
