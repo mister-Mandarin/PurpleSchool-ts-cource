@@ -38,7 +38,7 @@ class newMap {
         this.buket = []
     }
 
-    private findValue(key: string): {getKey: number, i: number} | undefined {
+    private findValue(key: string): {getKey: number, i: number} | void {
         const getKey: number = this.hashSum(key)
         const findValue = this.buket[getKey]
         if (!findValue) {
